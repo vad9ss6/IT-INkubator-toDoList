@@ -1,0 +1,43 @@
+.headerPaper{
+    padding: 20px;
+
+}
+
+.titleContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.listTask{
+    height: 200px;
+    list-style: none;
+    padding: 20px;
+    overflow: scroll;
+    overflow-x: hidden ;
+}
+
+.listTask::-webkit-scrollbar{
+    width: 6px;
+    background-color: #434343;
+}
+.listTask::-webkit-scrollbar-thumb{
+    width:8px;
+    background-image: -webkit-linear-gradient(#0a00f5, #8A8A8A);
+}
+.listTask::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border: 1px solid black;
+    background-color: #0a00f5;
+}
+
+
+
+.items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 15px 0;
+}

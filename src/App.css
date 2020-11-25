@@ -1,0 +1,30 @@
+body{
+  font: 18px  Arial;
+  position: relative;
+  height: 100vh;
+  background: url('./img/bg.jpg') bottom center no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+body:after{
+  z-index: -1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(19, 19, 21, 0.8);
+}
+
+.App {
+  z-index: 9999;
+}
+
+
+
+
+
+
