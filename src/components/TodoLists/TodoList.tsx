@@ -2,7 +2,7 @@ import React, {ChangeEvent, useState} from 'react';
 import '../../App.css';
 import s from './TodoList.module.css'
 
-import {filterValueType, TasksType} from "../../App";
+import {filterValueType, TasksType} from "../../oldApp/App";
 
 import AddItemForm from "../AddItemForm/AddItemForm";
 import EditableSpan from "../EditableSpan/EditableSpan";
@@ -27,9 +27,9 @@ type ProtoType = {
 
 
 
-function TodoList(props: ProtoType) {
+const TodoList = React.memo((props: ProtoType) => {
     const [activeBtn, setActiveBtn] = useState<filterValueType>(props.filter)
-
+    console.log('TODO-LIST')
     const classes = useStyles()
 
     const task = props.tasks.map(t => {
@@ -80,6 +80,14 @@ function TodoList(props: ProtoType) {
         setActiveBtn('completed')
     }
 
+    let taskForTodoList = props.tasks
+
+    if (props.filter === 'completed') {
+        taskForTodoList = props.tasks.filter(t => t.isDone)
+    }
+    if (props.filter === 'active') {
+        taskForTodoList = props.tasks.filter(t => !t.isDone)
+    }
 
     return (
         <Paper className={classes.rootPaper}>
@@ -90,13 +98,10 @@ function TodoList(props: ProtoType) {
                 </div>
                 <div>
                     <AddItemForm add={onClickHandler}/>
-                    {/*<input value={newTaskTitle} onChange={onChangeHandler} onKeyPress={onKeyPressHandler}/>*/}
-                    {/*<Button style={styleBtn} variant="secondary" onClick={onClickHandler}>+</Button>*/}
                 </div>
             </div>
-            {/*<div style={styleError}>Please enter the task!</div>*/}
             <ul className={s.listTask}>
-                {(props.tasks.length) ? task : <strong>no task</strong>}
+                {(taskForTodoList.length) ? task : <strong>no task</strong>}
             </ul>
             <div >
             <ButtonGroup fullWidth={true} >
@@ -110,6 +115,6 @@ function TodoList(props: ProtoType) {
             </div>
         </Paper>
     )
-}
+})
 
 export default TodoList;
