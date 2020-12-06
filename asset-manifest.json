@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/IT-INCUBATOR_Counter/static/css/main.dfc3453c.chunk.css",
+    "main.js": "/IT-INCUBATOR_Counter/static/js/main.0e4ecb8c.chunk.js",
+    "main.js.map": "/IT-INCUBATOR_Counter/static/js/main.0e4ecb8c.chunk.js.map",
+    "runtime-main.js": "/IT-INCUBATOR_Counter/static/js/runtime-main.5892fc11.js",
+    "runtime-main.js.map": "/IT-INCUBATOR_Counter/static/js/runtime-main.5892fc11.js.map",
+    "static/js/2.068b4a89.chunk.js": "/IT-INCUBATOR_Counter/static/js/2.068b4a89.chunk.js",
+    "static/js/2.068b4a89.chunk.js.map": "/IT-INCUBATOR_Counter/static/js/2.068b4a89.chunk.js.map",
+    "index.html": "/IT-INCUBATOR_Counter/index.html",
+    "precache-manifest.d99eddc91e5b20bb4f2b98b57481e10d.js": "/IT-INCUBATOR_Counter/precache-manifest.d99eddc91e5b20bb4f2b98b57481e10d.js",
+    "service-worker.js": "/IT-INCUBATOR_Counter/service-worker.js",
+    "static/css/main.dfc3453c.chunk.css.map": "/IT-INCUBATOR_Counter/static/css/main.dfc3453c.chunk.css.map",
+    "static/js/2.068b4a89.chunk.js.LICENSE.txt": "/IT-INCUBATOR_Counter/static/js/2.068b4a89.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/IT-INCUBATOR_Counter/static/media/bg.a2b45e36.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5892fc11.js",
+    "static/js/2.068b4a89.chunk.js",
+    "static/css/main.dfc3453c.chunk.css",
+    "static/js/main.0e4ecb8c.chunk.js"
+  ]
+}
