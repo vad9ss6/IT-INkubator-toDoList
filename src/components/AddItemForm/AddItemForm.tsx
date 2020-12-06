@@ -7,6 +7,7 @@ import {useStyles} from "../usestyle";
 
 
 type AddItemFormPropsType = {
+    titleForm: string
     add: (title: string) => void
 }
 
@@ -45,7 +46,7 @@ const AddItemForm = React.memo(
         }
         return <div>
             <div className={s.blockNetTask}>
-                <TextField value={newInputTitle} onChange={onChangeHandler} onKeyPress={onKeyPressHandler} id="outlined-basic" label="Set a task" variant="outlined" className={classes.rootInput}/>
+                <TextField value={newInputTitle} onChange={onChangeHandler} onKeyPress={onKeyPressHandler} id="outlined-basic" label={props.titleForm} variant="outlined" className={classes.rootInput}/>
                 <Button onClick={onClickHandler} className={classes.rootBtn}>+</Button>
                 {/*<input type="text" value={newInputTitle} onChange={onChangeHandler} onKeyPress={onKeyPressHandler}/>*/}
                 {/*<button onClick={onClickHandler}>+</button>*/}

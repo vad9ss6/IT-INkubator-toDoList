@@ -3,25 +3,29 @@ import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
 export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         rootPaper: {
-            width: '300px',
+            width: '350px',
             color: '#fff',
             backgroundColor: "rgba(13, 13, 13, 0.8)",
             borderRadius: '0',
             margin: '20px',
         },
         rootBtn: {
-            color: '#fff',
+            color: '#ffffff',
             backgroundColor: '#595959',
-            minWidth: '30px',
+            minWidth: '25px',
+            height: '20px',
             borderRadius: '0',
             '&:hover':{
                 backgroundColor: '#0a00f5',
             }
         },
         rootBtnDelete: {
-            color: '#595959',
-            '&:hover': {
-                backgroundColor: 'rgba(255, 255, 255, 0.5)'
+            color: '#ffffff',
+            '&.MuiIconButton-root':{
+                color: '#afb1b3'
+            },
+            '&.MuiIconButton-root:hover': {
+                backgroundColor: 'rgb(15,28,81)'
             }
         },
         rootCheckBox: {

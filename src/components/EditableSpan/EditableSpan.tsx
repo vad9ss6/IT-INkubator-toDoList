@@ -28,7 +28,7 @@ function EditableSpan(props:EditableSpanPropType) {
     }
 
 
-    return editMode? <input style={{backgroundColor: 'black', color: 'white'}} value={title} onChange={changeTitle} autoFocus onBlur={activateViewMode}/> : <span onDoubleClick={activateEditMode}>{props.title}</span>
+    return editMode? <input style={{backgroundColor: 'black', color: 'white', width: '80%'}} value={title} onChange={changeTitle} autoFocus onBlur={activateViewMode}/> : <span onDoubleClick={activateEditMode} style={{paddingLeft: '5px'}}>{props.title}</span>
 }
 
 export default EditableSpan

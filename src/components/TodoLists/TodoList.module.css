@@ -1,15 +1,19 @@
 .headerPaper{
     padding: 20px;
-
+    position: relative;
 }
 
 .titleContainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-
+    margin-bottom: 20px;
 }
-
+.titleBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 .listTask{
     height: 200px;
     list-style: none;

@@ -60,14 +60,14 @@ const TodoList = React.memo((props: ProtoType) => {
 
         }
         return <li key={t.id} style={styleCompletedTask} className={s.items}>
-
-            <Checkbox
-                onChange={onChangeHandler} checked={t.isDone} className={classes.rootCheckBox}  inputProps={{'aria-label': 'primary checkbox'}}
-            />
-            <EditableSpan title={t.title}
-                          editTitleTask={props.editTitleTask}
-                          idTaskTitle={t.id} idTodo={props.id}/>
-
+            <div>
+                <Checkbox
+                    onChange={onChangeHandler} checked={t.isDone} className={classes.rootCheckBox}  inputProps={{'aria-label': 'primary checkbox'}}
+                />
+                <EditableSpan title={t.title}
+                              editTitleTask={props.editTitleTask}
+                              idTaskTitle={t.id} idTodo={props.id} />
+            </div>
             <IconButton aria-label="delete" className={classes.rootBtnDelete} onClick={onClickHandler}>
                 <DeleteIcon fontSize="large" />
             </IconButton>
@@ -95,16 +95,18 @@ const TodoList = React.memo((props: ProtoType) => {
     }
 
 
-debugger
+
     return (
         <Paper className={classes.rootPaper}>
             <div className={s.headerPaper}>
                 <div className={s.titleContainer}>
-                    <EditableSpan title={props.title} idTodo={props.id} editTitleTask={props.editTodoTitle} idTaskTitle={props.id}/>{/*<h3>{props.title}</h3>*/}
-                    <Button onClick={removeTodo} className={classes.rootBtn}>x</Button>
+                    <EditableSpan title={props.title} idTodo={props.id} editTitleTask={props.editTodoTitle} idTaskTitle={props.id}/>
+                    <div className={s.titleBtn}>
+                        <Button onClick={removeTodo} className={classes.rootBtn}>x</Button>
+                    </div>
                 </div>
                 <div>
-                    <AddItemForm add={onClickHandler}/>
+                    <AddItemForm add={onClickHandler} titleForm={'Set a task'}/>
                 </div>
             </div>
             <ul className={s.listTask}>

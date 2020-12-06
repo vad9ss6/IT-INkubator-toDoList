@@ -110,7 +110,7 @@ function AppWithRedux() {
             </div>
             <Container fixed className={s.containerTodo}>
                 <Grid container justify="center"  >
-                    <AddItemForm add={addTodo}/>
+                    <AddItemForm add={addTodo} titleForm={'Add Todo list'}/>
                 </Grid>
                 <Grid container spacing={1} justify="space-around" >
                     {
