@@ -7,5 +7,6 @@ const combineReducer = combineReducers({
     todoList: todoListsReducer
 })
 
-export const store = createStore(combineReducer)
+//@ts-ignore
+export const store = createStore(combineReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 

@@ -1,7 +1,11 @@
-import {filterValueType, todoListType} from "../oldApp/AppWithReducers";
 import {v1} from "uuid";
 
-
+type FilterValuesType = "all" | "active" | "completed";
+type TodoListType = {
+    id: string
+    title: string
+    filter: FilterValuesType
+}
 export type RemoveTodolistActionType = {
     type: 'REMOVE-TODOLIST',
     id: string
@@ -19,7 +23,7 @@ export type ChangeTodolistTitleActionType = {
 export type ChangeTodolistFilterActionType = {
     type: 'CHANGE-TODOLIST-FILTER',
     id: string
-    filter: filterValueType
+    filter: FilterValuesType
 }
 
 type ActionType =
@@ -28,15 +32,15 @@ type ActionType =
     | ChangeTodolistTitleActionType
     | ChangeTodolistFilterActionType
 
-const initialState:Array<todoListType> = []
+const initialState:Array<TodoListType> = []
 
-export const todoListsReducer = (state: Array<todoListType> = initialState, action: ActionType):Array<todoListType> => {
+export const todoListsReducer = (state: Array<TodoListType> = initialState, action: ActionType):Array<TodoListType> => {
     switch (action.type) {
         case 'REMOVE-TODOLIST': {
             return state.filter(t => t.id !== action.id);
         }
         case 'ADD-TODOLIST': {
-            const newTodoList:todoListType = {id: action.todoListId, title: action.title, filter: "all"}
+            const newTodoList:TodoListType = {id: action.todoListId, title: action.title, filter: "all"}
             return [
                 ...state,
                 newTodoList
@@ -74,7 +78,7 @@ export const AddTodoListAC = (newTodoListTitle: string): AddTodolistActionType =
 export const ChangeTodoListTitleAC = (id: string , title: string): ChangeTodolistTitleActionType =>{
     return {type: 'CHANGE-TODOLIST-TITLE', id, title}
 }
-export const ChangeTodoListFilterAC = (id: string, filter: filterValueType): ChangeTodolistFilterActionType =>{
+export const ChangeTodoListFilterAC = (id: string, filter: FilterValuesType): ChangeTodolistFilterActionType =>{
     return {type: 'CHANGE-TODOLIST-FILTER', id, filter}
 }
 

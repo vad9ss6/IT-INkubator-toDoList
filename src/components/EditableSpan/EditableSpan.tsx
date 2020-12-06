@@ -3,8 +3,9 @@ import React, {ChangeEvent, useState} from "react";
 type EditableSpanPropType = {
     title: string
     idTaskTitle: string
-    idTodo: string
-    editTitleTask:(value: string , id: string, idTodo: string) => void
+    idTodo: string | ''
+    editTitleTask?:(value: string , id: string, idTodo: string) => void
+    editTodoTitle?:(value: string , id: string) => void
 }
 
 
@@ -22,7 +23,8 @@ function EditableSpan(props:EditableSpanPropType) {
     }
     const activateViewMode = () =>{
         setEditMode(false)
-        props.editTitleTask(title, props.idTaskTitle, props.idTodo)
+        props.editTitleTask && props.editTitleTask(title, props.idTaskTitle, props.idTodo)
+        props.editTodoTitle && props.editTodoTitle(title, props.idTodo)
     }
 
 

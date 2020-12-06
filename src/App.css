@@ -2,7 +2,7 @@ body{
   font: 18px  Arial;
   position: relative;
   height: 100vh;
-  background: url('./img/bg.jpg') bottom center no-repeat;
+  background: url('./img/bg.jpg') bottom center fixed;
   background-size: cover;
   color: #fff;
 }
@@ -10,7 +10,7 @@ body{
 body:after{
   z-index: -1;
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: block;
