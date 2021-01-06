@@ -1,6 +1,7 @@
 import React, {useCallback} from 'react';
 
 import s from './AppWithRedux.module.css'
+
 import TodoList from "./components/TodoLists/TodoList";
 import AddItemForm from "./components/AddItemForm/AddItemForm";
 
@@ -32,6 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
+
 export type todoListType = {
     id: string
     title: string
@@ -47,7 +49,7 @@ export type TasksType = {
 }
 export type filterValueType = 'all' | 'active' | 'completed'
 
-type AppRootStateType = {
+export type AppRootStateType = {
     tasks: tasksStateType
     todoList: Array<todoListType>
 }
@@ -91,8 +93,9 @@ function AppWithRedux() {
         const action = ChangeTodoListTitleAC(todoListId, newTitle)
         dispatch(action)
     }, [dispatch])
-    const classes = useStyles()
+
     console.log('APP')
+    const classes = useStyles()
     return (
         <>
             <div className={s.topNavBar}>
@@ -139,7 +142,6 @@ function AppWithRedux() {
         </>
     );
 }
-
 export default AppWithRedux;
 
 

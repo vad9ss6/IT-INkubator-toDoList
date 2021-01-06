@@ -1,6 +1,7 @@
 import {tasksReducer} from "./tasks-reducer";
-import {AddTodoListAC, todoListsReducer} from "./todo-lists-reducer";
-import {tasksStateType, todoListType} from "../../oldApp/App";
+import {AddTodoListAC, RemoveTodoListAC, todoListsReducer} from "./todo-lists-reducer";
+import {filterValueType, tasksStateType, todoListType} from "../AppWithRedux";
+import {v1} from "uuid";
 
 test('ids should be equals', () => {
     const startTasksState: tasksStateType = {};
@@ -17,4 +18,20 @@ test('ids should be equals', () => {
 
     expect(idFromTasks).toBe(action.todoListId);
     expect(idFromTodoLists).toBe(action.todoListId);
+});
+
+
+test('correct remove todo list ', () => {
+    const startTasksState: tasksStateType = {['1']:[{id:'gjgjg', title:'value', isDone:true}]};
+    const startTodoListsState: Array<todoListType> = [{id: "1", title: "ccccc", filter: "all"}];
+
+    const action = RemoveTodoListAC('1', );
+
+    const endTasksState = tasksReducer(startTasksState, action)
+    const endTodoListsState = todoListsReducer(startTodoListsState, action)
+
+
+
+    expect(endTasksState).toEqual({});
+    expect(endTodoListsState).toEqual([]);
 });

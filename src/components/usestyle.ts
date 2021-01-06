@@ -29,8 +29,10 @@ export const useStyles = makeStyles((theme: Theme) =>
             }
         },
         rootCheckBox: {
-            padding: '10px',
-            color: '#fff',
+            '.MuiCheckbox-root&': {
+                padding: '10px',
+                color: '#fff',
+            },
             '.Mui-checked&':{
                 color:'#0a00f5'
             },
