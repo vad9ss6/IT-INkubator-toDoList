@@ -15,7 +15,7 @@ const AddItemForm = React.memo(
     (props: AddItemFormPropsType) => {
         const [newInputTitle, setNewInputTitle] = useState<string>("")
         const [error, setError] = useState<boolean>(false)
-        console.log("addItemForm")
+
         const styleError = {
             color: 'red',
             display: error ? 'block' : 'none'
@@ -49,13 +49,13 @@ const AddItemForm = React.memo(
                     error={error}
                     value={newInputTitle}
                     id="outlined-basic"
-                    variant="outlined"
+
                     label={props.titleForm}
                     className={classes.rootInput}
                     onKeyPress={onKeyPressHandler}
                     onChange={onChangeHandler}
                 />
-                <Button onClick={onClickHandler} className={classes.rootBtn}>+</Button>
+                <Button onClick={onClickHandler} className={classes.rootBtn}>Add</Button>
             </div>
             <div style={styleError}>Please enter the task!</div>
         </div>
