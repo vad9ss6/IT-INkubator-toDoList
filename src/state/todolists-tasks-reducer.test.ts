@@ -1,11 +1,10 @@
 import {tasksReducer} from "./tasks-reducer";
-import {AddTodoListAC, RemoveTodoListAC, todoListsReducer} from "./todo-lists-reducer";
-import {filterValueType, tasksStateType, todoListType} from "../AppWithRedux";
-import {v1} from "uuid";
+import {AddTodoListAC, RemoveTodoListAC, TodoListDomainType, todoListsReducer} from "./todo-lists-reducer";
+import {TaskPriorities, TaskStatuses, TaskType} from "../api/todolist-api";
 
 test('ids should be equals', () => {
-    const startTasksState: tasksStateType = {};
-    const startTodoListsState: Array<todoListType> = [];
+    const startTasksState: { [key: string]: Array<TaskType> } = {};
+    const startTodoListsState: Array<TodoListDomainType> = [];
 
     const action = AddTodoListAC("new todolist");
 
@@ -22,14 +21,33 @@ test('ids should be equals', () => {
 
 
 test('correct remove todo list ', () => {
-    const startTasksState: tasksStateType = {['1']:[{id:'gjgjg', title:'value', isDone:true}]};
-    const startTodoListsState: Array<todoListType> = [{id: "1", title: "ccccc", filter: "all"}];
+    const startTasksState: { [key: string]: Array<TaskType> } = {
+        ['1']:
+            [{
+                id: 'gjgjg',
+                title: 'value',
+                status: TaskStatuses.Completed,
+                startDate: '',
+                priority: TaskPriorities.Middle,
+                todoListId:'',
+                order: 0,
+                description: '',
+                deadline: '',
+                addedDate: ''
+            }]
+    };
+    const startTodoListsState: Array<TodoListDomainType> = [{
+        id: "1",
+        title: "ccccc",
+        filter: "all",
+        addedDate: '',
+        order: 0
+    }];
 
-    const action = RemoveTodoListAC('1', );
+    const action = RemoveTodoListAC('1',);
 
     const endTasksState = tasksReducer(startTasksState, action)
     const endTodoListsState = todoListsReducer(startTodoListsState, action)
-
 
 
     expect(endTasksState).toEqual({});
