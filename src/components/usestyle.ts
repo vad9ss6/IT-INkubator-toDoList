@@ -6,17 +6,28 @@ export const useStyles = makeStyles((theme: Theme) =>
             width: '350px',
             color: '#fff',
             backgroundColor: "rgba(13, 13, 13, 0.8)",
-            borderRadius: '0',
+            borderRadius: '5px',
             margin: '20px',
         },
         rootBtn: {
             color: '#ffffff',
-            backgroundColor: '#595959',
-            minWidth: '25px',
-            height: '20px',
-            borderRadius: '0',
+            backgroundColor: '#AFB1B3',
+            borderRadius: '0 5px 5px 0',
+            marginBottom: '-12px',
             '&:hover':{
-                backgroundColor: '#0a00f5',
+                backgroundColor: '#3F51B5',
+            }
+        },
+        closeBtn:{
+            color: '#ffffff',
+            padding: '0',
+            '&:hover':{
+                backgroundColor: 'transparent',
+                color: '#d4001b',
+            },
+            '&.MuiButton-root':{
+                minWidth: '10px',
+
             }
         },
         rootBtnDelete: {
@@ -65,7 +76,6 @@ export const useStyles = makeStyles((theme: Theme) =>
             }
         },
         rootInput:{
-            width: '70%',
             '& .MuiInputBase-root':{
                 color: '#fff',
                 fontSize: '16px'

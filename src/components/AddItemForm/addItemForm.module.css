@@ -1,5 +1,5 @@
 .blockNetTask{
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    justify-content: space-around;
+    align-items: center;
 }
