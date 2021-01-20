@@ -9,8 +9,6 @@ type AddItemFormPropsType = {
     titleForm: string
     add: (title: string) => void
 }
-
-
 const AddItemForm = React.memo(
     (props: AddItemFormPropsType) => {
         const [newInputTitle, setNewInputTitle] = useState<string>("")
@@ -20,7 +18,6 @@ const AddItemForm = React.memo(
             color: 'red',
             display: error ? 'block' : 'none'
         }
-
         const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
             let inputValue = e.currentTarget.value
             setNewInputTitle(inputValue)
@@ -48,8 +45,6 @@ const AddItemForm = React.memo(
                 <TextField
                     error={error}
                     value={newInputTitle}
-                    id="outlined-basic"
-
                     label={props.titleForm}
                     className={classes.rootInput}
                     onKeyPress={onKeyPressHandler}

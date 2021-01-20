@@ -1,5 +1,6 @@
 import React, {ChangeEvent, useState} from "react";
 
+
 type EditableSpanPropType = {
     title: string
     idTaskTitle: string
@@ -30,7 +31,7 @@ function EditableSpan(props:EditableSpanPropType) {
 
     return editMode
         ? <input
-            style={{backgroundColor: 'black', color: 'white', width: '70%'}}
+            style={{backgroundColor: 'black', color: 'white', width: '70%',}}
             value={title} onChange={changeTitle}
             autoFocus
             onBlur={activateViewMode}/>
