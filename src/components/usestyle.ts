@@ -56,23 +56,9 @@ export const useStyles = makeStyles((theme: Theme) =>
 
         },
         rootBtnGroup:{
-            borderRadius: '0',
-
-            textTransform: 'uppercase',
-            backgroundColor: '#595959',
-            '&:hover':{
-
-                backgroundColor: '#0a00f5',
-            },
-            '&.MuiButton-contained':{
-                color: 'black',
-                backgroundColor: '#0a00f5'
-            },
-            '&.MuiButton-root':{
+            '&.MuiButton-outlinedPrimary':{
                 fontWeight: 'bold',
-                letterSpacing: '2px',
                 color: '#fff'
-
             }
         },
         rootInput:{
