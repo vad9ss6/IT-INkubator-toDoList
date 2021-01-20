@@ -11,7 +11,7 @@ import {useStyles} from "../usestyle";
 import {Task} from "./Task/Task";
 import {FilterValuesType} from "../../state/todo-lists-reducer";
 import {TaskStatuses, TaskType} from '../../api/todolist-api';
-import {setTasksTC} from "../../state/tasks-reducer";
+import {fetchTasksTC} from "../../state/tasks-reducer";
 
 
 type ProtoType = {
@@ -33,7 +33,7 @@ type ProtoType = {
 const TodoList = React.memo<ProtoType>(({removeTodoList, id, addTask, filterTodo, ...props}) => {
     let dispatch = useDispatch()
     useEffect(() => {
-        dispatch(setTasksTC(id))
+        dispatch(fetchTasksTC(id))
     },[])
     const [activeBtn, setActiveBtn] = useState<FilterValuesType>(props.filter)
 
@@ -118,7 +118,7 @@ const TodoList = React.memo<ProtoType>(({removeTodoList, id, addTask, filterTodo
 
             </ul>
             <div>
-                <ButtonGroup fullWidth={true}>
+                <ButtonGroup  fullWidth={true} variant="contained" color="primary" aria-label="contained primary button group" >
                     <Button className={classes.rootBtnGroup} variant={activeBtn === 'all' ? 'contained' : 'outlined'}
                             onClick={onClickAllHandler}>All</Button>
                     <Button className={classes.rootBtnGroup} variant={activeBtn === 'active' ? 'contained' : 'outlined'}
