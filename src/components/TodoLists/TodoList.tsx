@@ -95,7 +95,7 @@ const TodoList = React.memo<ProtoType>(({removeTodoList, id, addTask, filterTodo
         <Paper className={classes.rootPaper}>
             <div className={s.headerPaper}>
                 <div className={s.titleContainer}>
-                    <EditableSpan title={props.title} idTodo={id} editTitleTask={props.editTodoTitle} idTaskTitle={id}/>
+                    <EditableSpan title={props.title} idTodo={id} editTodoTitle={props.editTodoTitle} idTaskTitle={id}/>
                     <div className={s.titleBtn}>
                         <Button onClick={removeTodo} className={classes.closeBtn}>x</Button>
                     </div>
