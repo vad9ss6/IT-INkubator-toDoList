@@ -24,7 +24,7 @@ function EditableSpan(props:EditableSpanPropType) {
     }
     const activateViewMode = () =>{
         setEditMode(false)
-        props.editTitleTask && props.editTitleTask(title, props.idTaskTitle, props.idTodo)
+        props.editTitleTask && props.editTitleTask(props.idTodo, props.idTaskTitle, title )
         props.editTodoTitle && props.editTodoTitle(title, props.idTodo)
     }
 
