@@ -97,12 +97,14 @@ export const ChangeTodoListFilterAC = (id: string, filter: FilterValuesType): Ch
     return {type: 'CHANGE-TODOLIST-FILTER', id, filter}
 }
 
+
 export const fetchTodoListsTC = () => {
     return (dispatch: Dispatch) => {
         todoListAPI.getTodoList()
             .then((res) => {
                 dispatch(SetTodoListsAC(res.data))
             })
+            .catch(rej => rej)
     }
 }
 
@@ -111,15 +113,15 @@ export const deleteTodoListTC = (todoListId: string) => {
         todoListAPI.deleteTodoList(todoListId)
             .then(() => {
                 dispatch(RemoveTodoListAC(todoListId))
-        })
+            })
     }
 }
 
 export const addTodoListTC = (title: string) => {
     return (dispatch: Dispatch) => {
         todoListAPI.postTodoList(title)
-            .then(res =>{
-                if(res.data.resultCode === 0) dispatch(AddTodoListAC(res.data.data.item))
+            .then(res => {
+                if (res.data.resultCode === 0) dispatch(AddTodoListAC(res.data.data.item))
             })
     }
 }

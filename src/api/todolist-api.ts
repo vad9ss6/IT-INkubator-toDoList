@@ -13,6 +13,7 @@ export type TodolistType = {
     addedDate: string
     order: number
     title: string
+    message: string
 }
 type ResponseType<D = {}> = {
     resultCode: number
@@ -63,6 +64,15 @@ export type TaskType = {
     addedDate: string
 }
 
+export type UpdateTaskModelType = {
+    title: string
+    description: string
+    status: TaskStatuses
+    priority: TaskPriorities
+    startDate: string
+    deadline: string
+}
+
 export const todoListTaskAPI = {
     getTask(todoListId: string){
         return instance.get(`/todo-lists/${todoListId}/tasks`)
@@ -73,7 +83,7 @@ export const todoListTaskAPI = {
     deleteTask(todolistId: string,taskId: string){
         return instance.delete(`/todo-lists/${todolistId}/tasks/${taskId}`)
     },
-    updateTask(todolistId: string,taskId: string, title: string){
-        return instance.put(`/todo-lists/${todolistId}/tasks/${taskId}`, {title: `${title}`})
+    updateTask(todolistId: string,taskId: string, model: UpdateTaskModelType){
+        return instance.put(`/todo-lists/${todolistId}/tasks/${taskId}`, {...model})
     }
 }

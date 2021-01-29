@@ -23,7 +23,6 @@ export const Task:React.FC<PropType> = ({id, title, status, idTodo, ...props}) =
     const onClickHandler = () => props.removeTask(id, idTodo)
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.changeStatus(id, e.currentTarget.checked ? TaskStatuses.Completed : TaskStatuses.New, idTodo)
-
     }
     const styleCompletedTask = {
         textDecoration: status === TaskStatuses.Completed ? 'line-through' : ''
