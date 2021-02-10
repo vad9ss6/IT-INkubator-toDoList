@@ -9,9 +9,9 @@ import {Button, ButtonGroup, Paper} from "@material-ui/core";
 
 import {useStyles} from "../usestyle";
 import {Task} from "./Task/Task";
-import {FilterValuesType} from "../../state/todo-lists-reducer";
+import {FilterValuesType} from "../../redux/todo-lists-reducer";
 import {TaskStatuses, TaskType} from '../../api/todolist-api';
-import {fetchTasksTC} from "../../state/tasks-reducer";
+import {fetchTasksTC} from "../../redux/tasks-reducer";
 
 
 type ProtoType = {
@@ -34,7 +34,7 @@ const TodoList = React.memo<ProtoType>(({removeTodoList, id, addTask, filterTodo
     let dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchTasksTC(id))
-    },[])
+    },[dispatch,id])
     const [activeBtn, setActiveBtn] = useState<FilterValuesType>(props.filter)
 
     let taskForTodoList = props.tasks
