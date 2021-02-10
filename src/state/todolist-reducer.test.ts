@@ -6,7 +6,7 @@ import {
     ChangeTodoListTitleAC, FilterValuesType,
     RemoveTodoListAC, TodoListDomainType,
     todoListsReducer
-} from "./todo-lists-reducer";
+} from "../redux/todo-lists-reducer";
 
 
 let todolistId1: string;

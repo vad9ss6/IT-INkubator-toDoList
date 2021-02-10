@@ -1,5 +1,5 @@
-import {tasksReducer} from "./tasks-reducer";
-import {AddTodoListAC, RemoveTodoListAC, TodoListDomainType, todoListsReducer} from "./todo-lists-reducer";
+import {tasksReducer} from "../redux/tasks-reducer";
+import {AddTodoListAC, RemoveTodoListAC, TodoListDomainType, todoListsReducer} from "../redux/todo-lists-reducer";
 import {TaskPriorities, TaskStatuses, TaskType} from "../api/todolist-api";
 
 test('ids should be equals', () => {
